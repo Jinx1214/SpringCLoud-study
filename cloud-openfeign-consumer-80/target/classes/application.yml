@@ -1,0 +1,14 @@
+server:
+  port: 80
+spring:
+  application:
+    name: openfeign-consumer
+eureka:
+  client:
+    # 不拉取其它服务
+    fetch-registry: true
+    # 不像服务端注册自己 因为本身就是服务器
+    register-with-eureka: true
+    # eureka的服务地址
+    service-url:
+      defaultZone: http://localhost:7001/eureka/

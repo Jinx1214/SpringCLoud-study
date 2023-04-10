@@ -1,0 +1,27 @@
+server:
+  port: 8003
+spring:
+  application:
+    name: cloud-payment-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: com.mysql.cj.jdbc.Driver              # mysql驱动包
+    url: jdbc:mysql://localhost:3306/cloud?useUnicode=true&characterEncoding=utf-8&useSSL=false&servertimeZone=UTC
+    username: root
+    password: Jinx1214
+
+
+mybatis:
+  mapperLocations: classpath:com/atguigu/springcloud/dao/mapper/*.xml
+  type-aliases-package: com.atguigu.springcloud.entities    # 所有Entity别名类所在包
+eureka:
+  instance:
+    hostname: payment-service-hystrix
+  client:
+    # 需要拉取其它服务
+    fetch-registry: true
+    # 服务提供者需要向服务中注册自己
+    register-with-eureka: true
+    # 单机模式注册的话 地址只需要填写一个
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
