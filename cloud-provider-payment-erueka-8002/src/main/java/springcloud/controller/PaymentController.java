@@ -29,6 +29,7 @@ public class PaymentController {
     //獲取訂單接口
     @GetMapping("/payment/{id}")
     public CommonResult getPaymentInfoById(@PathVariable("id") Long id){
+        log.info("Eureka远程调用成功，id为:{}",id);
         Payment paymentById = paymentService.getPaymentById(id);
         if(paymentById ==null){
             return new CommonResult(444,"該訂單不存在");

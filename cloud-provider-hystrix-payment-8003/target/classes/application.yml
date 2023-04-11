@@ -15,8 +15,6 @@ mybatis:
   mapperLocations: classpath:com/atguigu/springcloud/dao/mapper/*.xml
   type-aliases-package: com.atguigu.springcloud.entities    # 所有Entity别名类所在包
 eureka:
-  instance:
-    hostname: payment-service-hystrix
   client:
     # 需要拉取其它服务
     fetch-registry: true

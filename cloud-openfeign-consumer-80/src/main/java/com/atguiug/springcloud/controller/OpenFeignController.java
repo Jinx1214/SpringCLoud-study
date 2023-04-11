@@ -22,4 +22,11 @@ public class OpenFeignController {
     public CommonResult<Payment> getPayment(@PathVariable("id")Long id){
         return paymentservice.getPayment(id);
     }
+
+
+    @GetMapping("/defaultPayment")
+    public String getPayment() throws InterruptedException {
+        String payment = paymentservice.getPayment();
+        return payment;
+    }
 }
